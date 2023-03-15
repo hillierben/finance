@@ -1,0 +1,34 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Log In
+{% endblock %}
+
+{% block main %}
+
+    <h4>History</h4>
+    <p></p>
+    <!--TABLE SHOWING History-->
+    <table class="table table-striped center">
+        <thead>
+            <tr>
+                <th scope="col">Symbol</th>
+                <th scope="col">Name</th>
+                <th scope="col">Shares</th>
+                <th scope="col">Amount</th>
+                <th scope="col">Date/Time</th>
+            </tr>
+        </thead>
+        {% for dict in history %}
+        <tr>
+            <td>{{ dict["stock_id"] }}</td>
+            <td>{{ dict["name"] }}</td>
+            <td>{{ dict["shares"] }}</td>
+            <td>{{ dict["amount"] }}</td>
+            <td>{{ dict["purchasedAt"] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <p></p>
+
+{% endblock %}

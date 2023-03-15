@@ -1,0 +1,24 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Log In
+{% endblock %}
+
+{% block main %}
+
+    <h4>Purchase Shares</h4>
+    <form action="/buy" method="post">
+        <input name="symbol" placeholder="Stock" autocomplete="off" type="text" autofocus>
+        <input name="shares" placeholder="Shares" autocomplete="off" type="text">
+        <button name="buy" type="submit">Buy</button>
+    </form>
+
+    <p></p>
+
+    <h4>Add Funds</h4>
+    <form action="/funds" method="post">
+        <input name="fundAmount" placeholder="Amount" autocomplete="off" type="text">
+        <button name="add" type="submit">Add</button>
+    </form>
+
+{% endblock %}

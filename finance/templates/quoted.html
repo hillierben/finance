@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Log In
+{% endblock %}
+
+{% block main %}
+
+    <h5>SEARCH ANOTHER QUOTE</h5>
+    <form action="/quote" method="post">
+        <input name="symbol" placeholder="Stock" autocomplete="off" type="text" autofocus>
+        <button name="submit" type="submit">Get Quote</button>
+    </form>
+    <p></p>
+    <!--TABLE SHOWING QUOTE-->
+    <table class="table table-hover">
+        <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Price</th>
+        </tr>
+        <tr class="table-active">
+            <td> {{ name }} </td>
+            <td> {{ price }} </td>
+        </tr>
+    <table>
+    <p></p>
+{% endblock %}
+

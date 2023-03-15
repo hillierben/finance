@@ -1,0 +1,45 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Log In
+{% endblock %}
+
+{% block main %}
+
+    <h3>Stocks</h3>
+    <p></p>
+    <!--TABLE SHOWING Stocks-->
+    <table class="table table-striped center">
+        <thead>
+            <tr>
+                <th scope="col">Symbol</th>
+                <th scope="col">Name</th>
+                <th scope="col">Shares</th>
+                <th scope="col">Total</th>
+            </tr>
+        </thead>
+        {% for stock in index %}
+        <tr>
+            <td>{{ stock.stock_id }}</td>
+            <td>{{ stock.name }}</td>
+            <td>{{ stock['SUM(shares)'] }}</td>
+            <td>{{ stock.amount }}</td>
+        </tr>
+        {% endfor %}
+        <tr style="right">
+            <thead></thead>
+                <td ></td>
+                <td></td>
+                <td><b>Cash</b></td>
+                <td> {{ cash }}</td>
+            </thead>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td><b>TOTAL</b></td>
+            <td> {{ total }}</td>
+        </tr>
+    </table>
+    <p></p>
+{% endblock %}
